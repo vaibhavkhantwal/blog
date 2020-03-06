@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+	<body>
+        <form action="" method="post" >
+            <textarea name="story" rows="5" cols="50">{{ post.story }}</textarea>
+            <input type="submit" name="submit" />
+            {{ form.csrf_token }}
+        </form>
+	</body>
+</html>

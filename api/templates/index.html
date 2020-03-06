@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <h1>welcome {{user}}</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+        	<textarea name="story" rows="5" cols="50"></textarea>
+        	<input type="file" name="picture" multiple="true">
+        	<input type="submit" name="submit" >
+        	{{ form.csrf_token }}
+        </form>
+        <button onClick="window.location.href='{{ url_for('.profile') }}'">Profile</button>
+        {% for post in posts %}
+        <div><a class="article-content">{{ post.story }}</a></div>
+        {% endfor %}
+        <button onClick="window.location.href='{{ url_for('.logout') }}'">Logout</button>
+    </body>
+</html>

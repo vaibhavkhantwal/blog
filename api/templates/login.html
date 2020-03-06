@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <form action="{{ url_for('.login') }}" method="post">
+            <input type="text" name="username" />
+            <label for="userame">Username</label>
+            <input type="password" name="password" />
+            <label for="password">Password</label>
+	        <input type="submit" name="submit" />
+            <input type="checkbox" id="remember" name="_remember" checked/>
+            <label for="remember">Keep me logged in</label>
+            {{ form.csrf_token }}
+        </form>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+</head>
+<body>
+	<h1>Profile</h1>
+    <button onClick="window.location.href='{{ url_for('.index') }}'">Home</button>
+	<h2>Your Posts</h2>
+	{% for post in posts %}
+    <div><p>{{ post.story }}  <b>{{ post.date.strftime('%Y-%m-%d') }}</b></p></div>
+    {% for picture in pictures %}
+    {% if post.id == picture.post_id %}
+    <img src="static/uploads/{{ picture.link }}" alt="{{picture.link}}" width="100" height="100">
+    {% endif %}
+    {% endfor %}
+    <button onClick="window.location.href='{{ url_for('.delete',id=post.id) }}'">Delete</button>
+    <button onClick="window.location.href='{{ url_for('.edit',id=post.id) }}'">Edit</button>
+    {% endfor %}
+</body>
+</html>

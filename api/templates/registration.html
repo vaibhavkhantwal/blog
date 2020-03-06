@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>registration Page</title>
+    </head>
+    <body>
+        <form action="{{ url_for('.registration') }}" method="post">
+            <input type="text" name="username" />
+            <input type="text" name="email" />
+            <input type="password" name="password" />
+	        <input type="submit" name="submit" />
+            {{ form.csrf_token }}
+        </form>
+    </body>
+</html>
